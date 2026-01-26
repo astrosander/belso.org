@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Архив BelPhO — задания и решения прошлых олимпиад по физике.">
+  <title>Архив — BelPhO</title>
+  <link rel="canonical" href="https://belpho.org/archive">
+  <link rel="stylesheet" href="../../shared/css/design-system.css">
+  <style>
+    .department-hero {
+      background: linear-gradient(135deg, var(--belpho-color) 0%, #6d28d9 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="network-bar">
+    Часть сети <a href="https://belso.org">BelSO</a> — Belarus Science Olympiad Infrastructure
+  </div>
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="hero department-hero" style="padding: var(--spacing-xl) 0;">
+      <div class="container">
+        <h1>Архив</h1>
+        <p>Более <strong data-metric="departments.belpho.packages">350</strong> архивных пакетов с заданиями и решениями</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="card" style="margin-bottom: var(--spacing-xl);">
+          <h3>Фильтры</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div class="form-group">
+              <label for="filter-year" class="form-label">Год</label>
+              <select id="filter-year" class="form-select">
+                <option value="">Все годы</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="filter-stage" class="form-label">Этап</label>
+              <select id="filter-stage" class="form-select">
+                <option value="">Все этапы</option>
+                <option value="school">Школьный</option>
+                <option value="regional">Региональный</option>
+                <option value="national">Национальный</option>
+                <option value="international">Международный</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="filter-class" class="form-label">Класс</label>
+              <select id="filter-class" class="form-select">
+                <option value="">Все классы</option>
+                <option value="9">9 класс</option>
+                <option value="10">10 класс</option>
+                <option value="11">11 класс</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Archive List -->
+        <div class="card">
+          <h3>Архивные пакеты</h3>
+          
+          <div class="table-container" style="margin-top: var(--spacing-lg);">
+            <table>
+              <thead>
+                <tr>
+                  <th>Год</th>
+                  <th>Этап</th>
+                  <th>Класс</th>
+                  <th>Задач</th>
+                  <th>Задания</th>
+                  <th>Решения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2023</td>
+                  <td>Национальный</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td><a href="/archive/2023-national-11/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2023-national-11/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+                <tr>
+                  <td>2023</td>
+                  <td>Национальный</td>
+                  <td>10</td>
+                  <td>5</td>
+                  <td><a href="/archive/2023-national-10/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2023-national-10/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+                <tr>
+                  <td>2023</td>
+                  <td>Региональный</td>
+                  <td>11</td>
+                  <td>4</td>
+                  <td><a href="/archive/2023-regional-11/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2023-regional-11/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+                <tr>
+                  <td>2023</td>
+                  <td>Региональный</td>
+                  <td>10</td>
+                  <td>4</td>
+                  <td><a href="/archive/2023-regional-10/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2023-regional-10/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+                <tr>
+                  <td>2022</td>
+                  <td>Национальный</td>
+                  <td>11</td>
+                  <td>5</td>
+                  <td><a href="/archive/2022-national-11/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2022-national-11/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+                <tr>
+                  <td>2022</td>
+                  <td>Региональный</td>
+                  <td>11</td>
+                  <td>4</td>
+                  <td><a href="/archive/2022-regional-11/problems.pdf">Скачать PDF</a></td>
+                  <td><a href="/archive/2022-regional-11/solutions.pdf">Скачать PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div style="margin-top: var(--spacing-lg); text-align: center;">
+            <button class="btn btn-secondary">Загрузить еще</button>
+          </div>
+        </div>
+        
+        <!-- Attribution -->
+        <div class="card" style="margin-top: var(--spacing-xl); background: var(--belso-gray-50);">
+          <h3>Атрибуция</h3>
+          <p>Мы стремимся указывать источники всех материалов. Если вы являетесь автором или правообладателем материала и хотите указать авторство или внести изменения, пожалуйста, свяжитесь с нами.</p>
+          <p style="margin-top: var(--spacing-md);">
+            <a href="mailto:belpho@belso.org" class="btn btn-secondary">Связаться с редакцией</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="../../shared/js/components.js"></script>
+  <script src="../../shared/js/main.js"></script>
+</body>
+</html>
+

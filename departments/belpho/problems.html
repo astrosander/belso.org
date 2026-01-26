@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Банк задач BelPhO — поиск и фильтрация задач по физике по темам, сложности и годам.">
+  <title>Банк задач — BelPhO</title>
+  <link rel="canonical" href="https://belpho.org/problems">
+  <link rel="stylesheet" href="../../shared/css/design-system.css">
+  <style>
+    .department-hero {
+      background: linear-gradient(135deg, var(--belpho-color) 0%, #6d28d9 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="network-bar">
+    Часть сети <a href="https://belso.org">BelSO</a> — Belarus Science Olympiad Infrastructure
+  </div>
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="hero department-hero" style="padding: var(--spacing-xl) 0;">
+      <div class="container">
+        <h1>Банк задач</h1>
+        <p>Более <strong data-metric="departments.belpho.problems">2,400</strong> задач с решениями и объяснениями</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="card" style="margin-bottom: var(--spacing-xl);">
+          <h3>Фильтры</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-md);">
+            <div class="form-group">
+              <label for="filter-topic" class="form-label">Тема</label>
+              <select id="filter-topic" class="form-select">
+                <option value="">Все темы</option>
+                <option value="mechanics">Механика</option>
+                <option value="thermodynamics">Термодинамика</option>
+                <option value="electromagnetism">Электричество и магнетизм</option>
+                <option value="optics">Оптика</option>
+                <option value="quantum">Квантовая физика</option>
+                <option value="relativity">Теория относительности</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="filter-level" class="form-label">Уровень</label>
+              <select id="filter-level" class="form-select">
+                <option value="">Все уровни</option>
+                <option value="foundations">Основы</option>
+                <option value="regional">Региональный</option>
+                <option value="national">Национальный</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="filter-year" class="form-label">Год</label>
+              <select id="filter-year" class="form-select">
+                <option value="">Все годы</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="filter-solution" class="form-label">С решением</label>
+              <select id="filter-solution" class="form-select">
+                <option value="">Все</option>
+                <option value="yes">Да</option>
+                <option value="no">Нет</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Problem List -->
+        <div class="card">
+          <h3>Задачи</h3>
+          
+          <div class="table-container" style="margin-top: var(--spacing-lg);">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Название</th>
+                  <th>Тема</th>
+                  <th>Уровень</th>
+                  <th>Год</th>
+                  <th>Решение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#001</td>
+                  <td><a href="/problems/001">Движение по наклонной плоскости</a></td>
+                  <td><span class="badge">Механика</span></td>
+                  <td><span class="badge badge-primary">Основы</span></td>
+                  <td>2023</td>
+                  <td><a href="/problems/001/solution">Да</a></td>
+                </tr>
+                <tr>
+                  <td>#002</td>
+                  <td><a href="/problems/002">Цикл Карно</a></td>
+                  <td><span class="badge">Термодинамика</span></td>
+                  <td><span class="badge badge-primary">Региональный</span></td>
+                  <td>2023</td>
+                  <td><a href="/problems/002/solution">Да</a></td>
+                </tr>
+                <tr>
+                  <td>#003</td>
+                  <td><a href="/problems/003">Электромагнитная индукция в кольце</a></td>
+                  <td><span class="badge">Электромагнетизм</span></td>
+                  <td><span class="badge badge-primary">Региональный</span></td>
+                  <td>2022</td>
+                  <td><a href="/problems/003/solution">Да</a></td>
+                </tr>
+                <tr>
+                  <td>#004</td>
+                  <td><a href="/problems/004">Интерференция света</a></td>
+                  <td><span class="badge">Оптика</span></td>
+                  <td><span class="badge badge-primary">Основы</span></td>
+                  <td>2023</td>
+                  <td><a href="/problems/004/solution">Да</a></td>
+                </tr>
+                <tr>
+                  <td>#005</td>
+                  <td><a href="/problems/005">Фотоэффект и энергия фотона</a></td>
+                  <td><span class="badge">Квантовая физика</span></td>
+                  <td><span class="badge badge-primary">Национальный</span></td>
+                  <td>2023</td>
+                  <td><a href="/problems/005/solution">Да</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div style="margin-top: var(--spacing-lg); text-align: center;">
+            <button class="btn btn-secondary">Загрузить еще</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="../../shared/js/components.js"></script>
+  <script src="../../shared/js/main.js"></script>
+</body>
+</html>
+

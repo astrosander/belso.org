@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Olympiad Suite BelSO — полный набор инструментов для проведения олимпиад.">
+  <meta property="og:title" content="Для организаторов — BelSO">
+  <title>Для организаторов — BelSO</title>
+  <link rel="canonical" href="https://belso.org/organizers">
+  <link rel="stylesheet" href="../shared/css/design-system.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="section" style="padding-top: var(--spacing-2xl);">
+      <div class="container">
+        <div class="section-title">
+          <h1>Olympiad Suite — Для организаторов</h1>
+          <p>Полный набор инструментов для проведения олимпиад от регистрации до публикации результатов</p>
+        </div>
+        
+        <!-- Workflow Overview -->
+        <div class="card" style="margin-bottom: var(--spacing-xl);">
+          <h2>End-to-End Workflow</h2>
+          <p>Olympiad Suite покрывает весь цикл проведения олимпиады:</p>
+          
+          <div style="margin-top: var(--spacing-xl);">
+            <div class="card" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--belso-primary);">
+              <h3>1. Регистрация</h3>
+              <p>Создание страницы олимпиады, настройка параметров (дата, время, правила), открытие регистрации для участников. Поддержка индивидуальной и командной регистрации.</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--belso-primary);">
+              <h3>2. Доставка заданий</h3>
+              <p>Автоматическая или ручная доставка заданий участникам в назначенное время. Поддержка различных форматов (PDF, онлайн-форма, интерактивные задачи).</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--belso-primary);">
+              <h3>3. Сбор решений</h3>
+              <p>Загрузка решений участниками через платформу. Поддержка различных форматов (PDF, текстовые файлы, код для информатики). Автоматическая проверка формата и дедлайнов.</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--belso-primary);">
+              <h3>4. Проверка</h3>
+              <p>Интерфейс для проверки решений проверяющими. Система распределения работ, комментарии, баллы. Для информатики — поддержка автоматической проверки (если доступна).</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: var(--spacing-md); border-left: 4px solid var(--belso-primary);">
+              <h3>5. Апелляции</h3>
+              <p>Система подачи апелляций участниками, рассмотрение апелляций, обновление результатов.</p>
+            </div>
+            
+            <div class="card" style="border-left: 4px solid var(--belso-primary);">
+              <h3>6. Результаты и архив</h3>
+              <p>Автоматическая публикация результатов, таблицы результатов, сертификаты. Автоматическое добавление в архив BelSO с полным пакетом заданий и решений.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="section-title">
+          <h2>Ключевые возможности</h2>
+        </div>
+        
+        <div class="card-grid">
+          <div class="card">
+            <h3>Гибкая настройка</h3>
+            <p>Настройте параметры олимпиады под ваши нужды: формат, длительность, правила, система оценивания.</p>
+          </div>
+          
+          <div class="card">
+            <h3>Масштабируемость</h3>
+            <p>Поддержка олимпиад любого масштаба: от школьных до региональных и национальных.</p>
+          </div>
+          
+          <div class="card">
+            <h3>Интеграция с архивом</h3>
+            <p>Автоматическое добавление материалов олимпиады в архив BelSO для будущего использования сообществом.</p>
+          </div>
+          
+          <div class="card">
+            <h3>Прозрачность</h3>
+            <p>Публикация результатов, заданий и решений способствует прозрачности и развитию олимпиадного движения.</p>
+          </div>
+        </div>
+        
+        <!-- Request Form -->
+        <div class="card" style="margin-top: var(--spacing-xl); background: var(--belso-gray-50);">
+          <h2>Запрос на проведение олимпиады</h2>
+          <p>Хотите провести олимпиаду через BelSO? Заполните форму, и мы свяжемся с вами для обсуждения деталей.</p>
+          
+          <form id="organizer-request-form" style="margin-top: var(--spacing-lg);">
+            <div class="form-group">
+              <label for="name" class="form-label">Ваше имя *</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="organization" class="form-label">Организация / Школа / Клуб</label>
+              <input type="text" id="organization" name="organization" class="form-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Предмет *</label>
+              <select id="subject" name="subject" class="form-select" required>
+                <option value="">Выберите предмет</option>
+                <option value="physics">Физика (BelPhO)</option>
+                <option value="astronomy">Астрономия (BelAstro)</option>
+                <option value="mathematics">Математика (BelMath)</option>
+                <option value="informatics">Информатика (BelOI)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="olympiad-type" class="form-label">Тип олимпиады</label>
+              <select id="olympiad-type" name="olympiad-type" class="form-select">
+                <option value="school">Школьная</option>
+                <option value="regional">Региональная</option>
+                <option value="national">Национальная</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="expected-participants" class="form-label">Ожидаемое количество участников</label>
+              <input type="number" id="expected-participants" name="expected-participants" class="form-input" min="1">
+            </div>
+            
+            <div class="form-group">
+              <label for="date" class="form-label">Предполагаемая дата проведения</label>
+              <input type="date" id="date" name="date" class="form-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Дополнительная информация</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Расскажите о вашей олимпиаде, особых требованиях, формате и т.д."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Отправить запрос</button>
+          </form>
+          
+          <div id="form-success" style="display: none; margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--belso-success); color: white; border-radius: var(--border-radius);">
+            <strong>Спасибо!</strong> Ваш запрос отправлен. Мы свяжемся с вами в ближайшее время.
+          </div>
+        </div>
+        
+        <!-- Alternative Contact -->
+        <div class="card" style="margin-top: var(--spacing-xl);">
+          <h3>Альтернативные способы связи</h3>
+          <p>Если у вас есть вопросы или вы предпочитаете другой способ связи:</p>
+          <ul style="margin-top: var(--spacing-md); padding-left: var(--spacing-lg); line-height: 2;">
+            <li>Email: <a href="mailto:organizers@belso.org">organizers@belso.org</a></li>
+            <li>Telegram: <a href="https://t.me/belso_org">@belso_org</a></li>
+            <li>GitHub Issues: для технических вопросов и предложений</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="../shared/js/components.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script>
+    // Form handling
+    document.getElementById('organizer-request-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // In a real implementation, this would send data to a backend
+      // For MVP, we'll just show a success message
+      const form = e.target;
+      const successDiv = document.getElementById('form-success');
+      
+      // Simulate form submission
+      setTimeout(() => {
+        form.style.display = 'none';
+        successDiv.style.display = 'block';
+        
+        // Log form data (in production, send to backend)
+        const formData = new FormData(form);
+        console.log('Form submission:', Object.fromEntries(formData));
+      }, 500);
+    });
+  </script>
+</body>
+</html>
+

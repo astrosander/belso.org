@@ -1,0 +1,36 @@
+{
+  "totalPackages": 1250,
+  "totalProblems": 8500,
+  "totalSolutions": 3200,
+  "activeContributors": 45,
+  "contestsHosted": 28,
+  "totalUsers": 12500,
+  "departments": {
+    "belpho": {
+      "packages": 350,
+      "problems": 2400,
+      "solutions": 900,
+      "contests": 8
+    },
+    "belastro": {
+      "packages": 280,
+      "problems": 1900,
+      "solutions": 750,
+      "contests": 7
+    },
+    "belmath": {
+      "packages": 320,
+      "problems": 2200,
+      "solutions": 850,
+      "contests": 7
+    },
+    "beloi": {
+      "packages": 300,
+      "problems": 2000,
+      "solutions": 700,
+      "contests": 6
+    }
+  },
+  "lastUpdated": "2024-01-15T10:30:00Z"
+}
+
