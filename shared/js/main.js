@@ -24,17 +24,52 @@ document.addEventListener('DOMContentLoaded', function() {
   loadMetrics();
 });
 
+// Helper to get relative path from current location to target
+function getRelativePathTo(target) {
+  if (!target.startsWith('/') || target.startsWith('http')) return target;
+  
+  const current = window.location.pathname;
+  const currentDir = current.substring(0, current.lastIndexOf('/') + 1);
+  const targetPath = target.substring(1); // Remove leading /
+  
+  const currentParts = currentDir.split('/').filter(p => p);
+  const targetParts = targetPath.split('/').filter(p => p);
+  
+  // Find common path
+  let common = 0;
+  while (common < currentParts.length - 1 && 
+         common < targetParts.length && 
+         currentParts[common] === targetParts[common]) {
+    common++;
+  }
+  
+  // Go up from current
+  const up = currentParts.length - 1 - common;
+  const upPath = '../'.repeat(up);
+  
+  // Go down to target
+  const downPath = targetParts.slice(common).join('/');
+  
+  return upPath + (downPath || 'index.html');
+}
+
 // Load and display metrics
 async function loadMetrics() {
   try {
-    // Convert absolute paths to relative paths for local file access
-    let metricsPath = '/shared/data/metrics.json';
-    if (metricsPath.startsWith('/')) {
-      const depth = window.location.pathname.split('/').filter(p => p && !p.endsWith('.html')).length - 1;
-      metricsPath = '../'.repeat(depth) + metricsPath.substring(1);
-    }
+    // Convert absolute paths to relative paths
+    const metricsPath = getRelativePathTo('/shared/data/metrics.json');
     const response = await fetch(metricsPath);
-    const data = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const text = await response.text();
+    if (!text || text.trim() === '') {
+      throw new Error('Empty response from metrics.json');
+    }
+    
+    const data = JSON.parse(text);
     
     // Update metric tiles
     document.querySelectorAll('[data-metric]').forEach(element => {
@@ -67,7 +102,9 @@ async function loadMetrics() {
       });
     }
   } catch (error) {
-    console.error('Error loading metrics:', error);
+    // Silently fail - metrics are optional
+    // console.error('Error loading metrics:', error);
+    // Metrics will show default values from HTML
   }
 }
 

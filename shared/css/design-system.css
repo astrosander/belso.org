@@ -1,15 +1,15 @@
 /* BelSO Design System - Shared Styles */
 
 :root {
-  /* Global Neutrals (same on every site) */
+  /* Neutrals (global) */
   --bg-primary: #FFFFFF;
   --bg-soft: #F8FAFC;
-  --surface: #FFFFFF;
+  --card-surface: #FFFFFF;
   --border: #E2E8F0;
   --text-primary: #0F172A;
   --text-muted: #475569;
   
-  /* Official Accent (global, optimistic & "medal-like") */
+  /* Official accent (global, optimistic & "medal-like") */
   --amber-primary: #B45309;
   --amber-hover: #92400E;
   --amber-tint: #FEF3C7;
@@ -24,7 +24,7 @@
   
   /* BelPhO (Physics) - Brand Blue */
   --belpho-primary: #2563EB;
-  --belpho-primary-hover: #1D4ED8;
+  --belpho-hover: #1D4ED8;
   --belpho-tint-soft: #EFF6FF;
   --belpho-tint-strong: #DBEAFE;
   --belpho-support: #0E7490;
@@ -32,7 +32,7 @@
   
   /* BelAstro (Astronomy) - Brand Violet */
   --belastro-primary: #6D28D9;
-  --belastro-primary-hover: #5B21B6;
+  --belastro-hover: #5B21B6;
   --belastro-tint-soft: #F5F3FF;
   --belastro-tint-strong: #EDE9FE;
   --belastro-support: #4338CA;
@@ -40,7 +40,7 @@
   
   /* BelMath (Math) - Brand Emerald */
   --belmath-primary: #047857;
-  --belmath-primary-hover: #065F46;
+  --belmath-hover: #065F46;
   --belmath-tint-soft: #ECFDF5;
   --belmath-tint-strong: #D1FAE5;
   --belmath-support: #4D7C0F;
@@ -48,29 +48,30 @@
   
   /* BelOI (Informatics) - Brand Magenta */
   --beloi-primary: #C026D3;
-  --beloi-primary-hover: #A21CAF;
+  --beloi-hover: #A21CAF;
   --beloi-tint-soft: #FDF4FF;
   --beloi-tint-strong: #FAE8FF;
   --beloi-support: #BE123C;
   --beloi-support-tint: #FFE4E6;
   
-  /* Legacy gray variables for compatibility */
-  --belso-gray-50: #F8FAFC;
-  --belso-gray-100: #F8FAFC;
-  --belso-gray-200: #E2E8F0;
-  --belso-gray-300: #E2E8F0;
-  --belso-gray-400: #94A3B8;
-  --belso-gray-500: #64748B;
-  --belso-gray-600: #475569;
-  --belso-gray-700: #334155;
-  --belso-gray-800: #1E293B;
-  --belso-gray-900: #0F172A;
-  
-  /* Department Colors (for quick reference) */
-  --belpho-color: #2563EB;
-  --belastro-color: #6D28D9;
-  --belmath-color: #047857;
-  --beloi-color: #C026D3;
+  /* Legacy aliases for backward compatibility */
+  --belso-primary-dark: var(--belso-primary-hover);
+  --belso-primary-light: var(--belso-primary);
+  --belso-accent: var(--amber-primary);
+  --belso-gray-50: var(--bg-soft);
+  --belso-gray-100: var(--bg-soft);
+  --belso-gray-200: var(--border);
+  --belso-gray-300: var(--border);
+  --belso-gray-400: var(--text-muted);
+  --belso-gray-500: var(--text-muted);
+  --belso-gray-600: var(--text-muted);
+  --belso-gray-700: var(--text-primary);
+  --belso-gray-800: var(--text-primary);
+  --belso-gray-900: var(--text-primary);
+  --belpho-color: var(--belpho-primary);
+  --belastro-color: var(--belastro-primary);
+  --belmath-color: var(--belmath-primary);
+  --beloi-color: var(--beloi-primary);
   
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -86,17 +87,17 @@
   --spacing-3xl: 2rem;
   
   /* Layout */
-  --container-max-width: 1200px;
+  --container-max-width: 1800px;
   --container-padding: 1rem;
-  --border-radius: 0.375rem;
-  --border-radius-lg: 0.5rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
   /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-base: 250ms ease-in-out;
+  --transition-fast: 100ms ease-in-out;
+  --transition-base: 150ms ease-in-out;
 }
 
 * {
@@ -124,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
 h1 {
@@ -145,7 +146,7 @@ h4 {
 }
 
 p {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   color: var(--text-primary);
 }
 
@@ -180,7 +181,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-sm) var(--container-padding);
+  padding: var(--spacing-md) var(--container-padding);
   max-width: var(--container-max-width);
   margin: 0 auto;
 }
@@ -208,7 +209,7 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   list-style: none;
 }
 
@@ -219,7 +220,7 @@ a:hover {
 .nav-link {
   color: var(--text-primary);
   font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
   transition: all var(--transition-fast);
 }
@@ -242,7 +243,7 @@ a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--surface);
+  background: var(--card-surface);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
@@ -251,15 +252,13 @@ a:hover {
   margin-top: var(--spacing-xs);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all var(--transition-base);
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
   z-index: 10;
 }
 
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .dropdown-item {
@@ -279,9 +278,9 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
@@ -297,7 +296,6 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--belso-primary-hover);
   color: #ffffff;
-  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
@@ -314,21 +312,42 @@ a:hover {
 .hero {
   background: linear-gradient(135deg, var(--belso-primary) 0%, var(--belso-primary-hover) 100%);
   color: #ffffff;
-  padding: var(--spacing-2xl) 0;
-  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.hero-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo {
+  height: 150px;
+  width: auto;
+  max-width: 100%;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero h1 {
   color: #ffffff;
-  font-size: 2.25rem;
+  font-size: 3rem;
   margin-bottom: var(--spacing-md);
 }
 
 .hero p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.125rem;
-  max-width: 700px;
-  margin: 0 auto var(--spacing-lg);
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 /* Metrics Tiles */
@@ -340,7 +359,7 @@ a:hover {
 }
 
 .metric-tile {
-  background: var(--surface);
+  background: var(--card-surface);
   border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-md);
@@ -349,27 +368,26 @@ a:hover {
 }
 
 .metric-tile:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--belso-primary);
 }
 
 .metric-value {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--belso-primary);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 .metric-label {
   color: var(--text-muted);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 500;
 }
 
 /* Cards */
 .card {
-  background: var(--surface);
+  background: var(--card-surface);
   border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-md);
@@ -388,16 +406,29 @@ a:hover {
   margin: var(--spacing-md) 0;
 }
 
-/* Department Cards */
+/* Department Cards Grid - Full Width, One Per Row */
+.departments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+/* Department Cards - WOW Effect */
 .department-card {
-  background: var(--surface);
+  background: var(--card-surface);
   border: 2px solid var(--border);
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   text-align: center;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-height: 180px;
 }
 
 .department-card::before {
@@ -406,60 +437,285 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    var(--department-color, var(--belso-primary)) 0%, 
+    transparent 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 0;
+}
+
+.department-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
   background: var(--department-color, var(--belso-primary));
-  transform: scaleX(0);
-  transition: transform var(--transition-base);
+  width: 0;
+  z-index: 1;
 }
 
 .department-card:hover::before {
-  transform: scaleX(1);
+  opacity: 0.05;
+}
+
+.department-card:hover::after {
+  width: 100%;
 }
 
 .department-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 
+              0 0 0 1px var(--department-color, var(--belso-primary));
   border-color: var(--department-color, var(--belso-primary));
 }
 
+.department-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.department-card img {
+  width: 320px !important;
+  height: auto !important;
+  margin: 0 !important;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.department-card .department-content {
+  text-align: left;
+  flex: 1;
+}
+
+.department-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 800;
+}
+
+.department-card .text-muted {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.department-card p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.department-card .btn {
+  font-size: 1.25rem;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  margin-top: var(--spacing-sm);
+  font-weight: 700;
+}
+
 .department-card.belpho {
-  --department-color: var(--belpho-color);
+  --department-color: var(--belpho-primary);
+}
+
+.department-card.belpho .btn-primary {
+  background-color: var(--belpho-primary);
+  color: #ffffff;
+}
+
+.department-card.belpho .btn-primary:hover {
+  background-color: var(--belpho-hover);
+  color: #ffffff;
 }
 
 .department-card.belastro {
-  --department-color: var(--belastro-color);
+  --department-color: var(--belastro-primary);
+}
+
+.department-card.belastro .btn-primary {
+  background-color: var(--belastro-primary);
+  color: #ffffff;
+}
+
+.department-card.belastro .btn-primary:hover {
+  background-color: var(--belastro-hover);
+  color: #ffffff;
 }
 
 .department-card.belmath {
-  --department-color: var(--belmath-color);
+  --department-color: var(--belmath-primary);
+}
+
+.department-card.belmath .btn-primary {
+  background-color: var(--belmath-primary);
+  color: #ffffff;
+}
+
+.department-card.belmath .btn-primary:hover {
+  background-color: var(--belmath-hover);
+  color: #ffffff;
 }
 
 .department-card.beloi {
-  --department-color: var(--beloi-color);
+  --department-color: var(--beloi-primary);
+}
+
+.department-card.beloi .btn-primary {
+  background-color: var(--beloi-primary);
+  color: #ffffff;
+}
+
+.department-card.beloi .btn-primary:hover {
+  background-color: var(--beloi-hover);
+  color: #ffffff;
 }
 
 .department-card h3 {
   color: var(--department-color, var(--belso-primary));
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  text-align: left;
+}
+
+/* Department-specific body styles */
+body.belpho {
+  --department-primary: var(--belpho-primary);
+  --department-hover: var(--belpho-hover);
+  --department-tint-soft: var(--belpho-tint-soft);
+  --department-tint-strong: var(--belpho-tint-strong);
+  --department-support: var(--belpho-support);
+  --department-support-tint: var(--belpho-support-tint);
+}
+
+body.belastro {
+  --department-primary: var(--belastro-primary);
+  --department-hover: var(--belastro-hover);
+  --department-tint-soft: var(--belastro-tint-soft);
+  --department-tint-strong: var(--belastro-tint-strong);
+  --department-support: var(--belastro-support);
+  --department-support-tint: var(--belastro-support-tint);
+}
+
+body.belmath {
+  --department-primary: var(--belmath-primary);
+  --department-hover: var(--belmath-hover);
+  --department-tint-soft: var(--belmath-tint-soft);
+  --department-tint-strong: var(--belmath-tint-strong);
+  --department-support: var(--belmath-support);
+  --department-support-tint: var(--belmath-support-tint);
+}
+
+body.beloi {
+  --department-primary: var(--beloi-primary);
+  --department-hover: var(--beloi-hover);
+  --department-tint-soft: var(--beloi-tint-soft);
+  --department-tint-strong: var(--beloi-tint-strong);
+  --department-support: var(--beloi-support);
+  --department-support-tint: var(--beloi-support-tint);
+}
+
+/* Department hero gradients */
+body.belpho .hero {
+  background: linear-gradient(135deg, var(--belpho-primary) 0%, var(--belpho-hover) 100%);
+}
+
+body.belastro .hero {
+  background: linear-gradient(135deg, var(--belastro-primary) 0%, var(--belastro-hover) 100%);
+}
+
+body.belmath .hero {
+  background: linear-gradient(135deg, var(--belmath-primary) 0%, var(--belmath-hover) 100%);
+}
+
+body.beloi .hero {
+  background: linear-gradient(135deg, var(--beloi-primary) 0%, var(--beloi-hover) 100%);
+}
+
+/* Department buttons and links */
+body.belpho .btn-primary,
+body.belpho a {
+  color: var(--belpho-primary);
+}
+
+body.belpho .btn-primary {
+  background-color: var(--belpho-primary);
+}
+
+body.belpho .btn-primary:hover {
+  background-color: var(--belpho-hover);
+}
+
+body.belpho a:hover {
+  color: var(--belpho-hover);
+}
+
+body.belastro .btn-primary,
+body.belastro a {
+  color: var(--belastro-primary);
+}
+
+body.belastro .btn-primary {
+  background-color: var(--belastro-primary);
+}
+
+body.belastro .btn-primary:hover {
+  background-color: var(--belastro-hover);
+}
+
+body.belastro a:hover {
+  color: var(--belastro-hover);
+}
+
+body.belmath .btn-primary,
+body.belmath a {
+  color: var(--belmath-primary);
+}
+
+body.belmath .btn-primary {
+  background-color: var(--belmath-primary);
+}
+
+body.belmath .btn-primary:hover {
+  background-color: var(--belmath-hover);
+}
+
+body.belmath a:hover {
+  color: var(--belmath-hover);
+}
+
+body.beloi .btn-primary,
+body.beloi a {
+  color: var(--beloi-primary);
+}
+
+body.beloi .btn-primary {
+  background-color: var(--beloi-primary);
+}
+
+body.beloi .btn-primary:hover {
+  background-color: var(--beloi-hover);
+}
+
+body.beloi a:hover {
+  color: var(--beloi-hover);
 }
 
 /* Sections */
 .section {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-md) 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .section-title h2 {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .section-title p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
@@ -468,9 +724,9 @@ a:hover {
 /* Footer */
 .footer {
   background: var(--text-primary);
-  color: var(--text-muted);
-  padding: var(--spacing-2xl) 0 var(--spacing-md);
-  margin-top: var(--spacing-2xl);
+  color: var(--bg-soft);
+  padding: var(--spacing-md) 0 var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .footer-content {
@@ -482,8 +738,8 @@ a:hover {
 
 .footer-section h4 {
   color: #ffffff;
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.9375rem;
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
 }
 
 .footer-links {
@@ -491,7 +747,7 @@ a:hover {
 }
 
 .footer-links li {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 .footer-links a {
@@ -504,28 +760,28 @@ a:hover {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border);
   padding-top: var(--spacing-md);
   text-align: center;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
 .footer-disclaimer {
   background: rgba(255, 255, 255, 0.05);
   border-left: 3px solid var(--amber-primary);
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   margin-top: var(--spacing-md);
   border-radius: var(--border-radius);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 }
 
 /* BelSO Network Bar */
 .network-bar {
   background: var(--bg-soft);
   border-bottom: 1px solid var(--border);
-  padding: var(--spacing-xs) 0;
-  font-size: 0.8125rem;
+  padding: var(--spacing-sm) 0;
+  font-size: 0.875rem;
   text-align: center;
   color: var(--text-muted);
 }
@@ -538,13 +794,13 @@ a:hover {
 /* Tables */
 .table-container {
   overflow-x: auto;
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-xl) 0;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--surface);
+  background: var(--card-surface);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
@@ -554,7 +810,7 @@ thead {
 }
 
 th, td {
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   text-align: left;
   border-bottom: 1px solid var(--border);
 }
@@ -570,12 +826,12 @@ tr:hover {
 
 /* Forms */
 .form-group {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 .form-label {
   display: block;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -584,14 +840,12 @@ tr:hover {
 .form-textarea,
 .form-select {
   width: 100%;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   transition: all var(--transition-fast);
-  background: var(--surface);
-  color: var(--text-primary);
 }
 
 .form-input:focus,
@@ -599,19 +853,19 @@ tr:hover {
 .form-select:focus {
   outline: none;
   border-color: var(--belso-primary);
-  box-shadow: 0 0 0 3px var(--belso-tint-soft);
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.1);
 }
 
 .form-textarea {
-  min-height: 100px;
+  min-height: 120px;
   resize: vertical;
 }
 
 /* Badges */
 .badge {
   display: inline-block;
-  padding: 0.125rem var(--spacing-xs);
-  font-size: 0.6875rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.75rem;
   font-weight: 600;
   border-radius: 999px;
   background: var(--bg-soft);
@@ -624,7 +878,7 @@ tr:hover {
 }
 
 .badge-success {
-  background: var(--belmath-primary);
+  background: var(--belso-success);
   color: #ffffff;
 }
 
@@ -641,7 +895,7 @@ tr:hover {
 /* Responsive */
 @media (max-width: 768px) {
   :root {
-    --container-padding: 0.75rem;
+    --container-padding: 1rem;
   }
   
   h1 {
@@ -650,6 +904,20 @@ tr:hover {
   
   h2 {
     font-size: 1.75rem;
+  }
+  
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .hero-logo-container {
+    justify-content: center;
+  }
+  
+  .hero-text {
+    text-align: center;
   }
   
   .hero h1 {
@@ -666,7 +934,7 @@ tr:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--surface);
+    background: var(--bg-primary);
     border-top: 1px solid var(--border);
     flex-direction: column;
     padding: var(--spacing-md);
@@ -683,11 +951,41 @@ tr:hover {
   
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
   }
   
   .card-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .departments-grid {
+    gap: var(--spacing-sm);
+  }
+  
+  .department-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    min-height: auto;
+    padding: var(--spacing-lg);
+  }
+  
+  .department-card img {
+    width: 200px !important;
+    margin: 0 auto var(--spacing-sm) !important;
+  }
+  
+  .department-card .department-content {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .department-card h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .department-card .btn {
+    width: 100%;
+    justify-self: center;
   }
   
   .footer-content {
@@ -701,7 +999,7 @@ tr:hover {
   }
   
   .metric-value {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 
@@ -720,153 +1018,4 @@ tr:hover {
 .mb-1 { margin-bottom: var(--spacing-md); }
 .mb-2 { margin-bottom: var(--spacing-lg); }
 .mb-3 { margin-bottom: var(--spacing-xl); }
-
-/* Department-specific styling */
-/* BelPhO (Physics) */
-.department-hero.belpho,
-body.belpho .hero {
-  background: linear-gradient(135deg, var(--belpho-primary) 0%, var(--belpho-primary-hover) 100%);
-}
-
-body.belpho {
-  --department-primary: var(--belpho-primary);
-  --department-primary-hover: var(--belpho-primary-hover);
-  --department-tint-soft: var(--belpho-tint-soft);
-  --department-tint-strong: var(--belpho-tint-strong);
-}
-
-body.belpho .btn-primary {
-  background-color: var(--belpho-primary);
-}
-
-body.belpho .btn-primary:hover {
-  background-color: var(--belpho-primary-hover);
-}
-
-body.belpho a {
-  color: var(--belpho-primary);
-}
-
-body.belpho a:hover {
-  color: var(--belpho-primary-hover);
-}
-
-body.belpho .metric-value {
-  color: var(--belpho-primary);
-}
-
-/* BelAstro (Astronomy) */
-.department-hero.belastro,
-body.belastro .hero {
-  background: linear-gradient(135deg, var(--belastro-primary) 0%, var(--belastro-primary-hover) 100%);
-}
-
-body.belastro {
-  --department-primary: var(--belastro-primary);
-  --department-primary-hover: var(--belastro-primary-hover);
-  --department-tint-soft: var(--belastro-tint-soft);
-  --department-tint-strong: var(--belastro-tint-strong);
-}
-
-body.belastro .btn-primary {
-  background-color: var(--belastro-primary);
-}
-
-body.belastro .btn-primary:hover {
-  background-color: var(--belastro-primary-hover);
-}
-
-body.belastro a {
-  color: var(--belastro-primary);
-}
-
-body.belastro a:hover {
-  color: var(--belastro-primary-hover);
-}
-
-body.belastro .metric-value {
-  color: var(--belastro-primary);
-}
-
-/* BelMath (Math) */
-.department-hero.belmath,
-body.belmath .hero {
-  background: linear-gradient(135deg, var(--belmath-primary) 0%, var(--belmath-primary-hover) 100%);
-}
-
-body.belmath {
-  --department-primary: var(--belmath-primary);
-  --department-primary-hover: var(--belmath-primary-hover);
-  --department-tint-soft: var(--belmath-tint-soft);
-  --department-tint-strong: var(--belmath-tint-strong);
-}
-
-body.belmath .btn-primary {
-  background-color: var(--belmath-primary);
-}
-
-body.belmath .btn-primary:hover {
-  background-color: var(--belmath-primary-hover);
-}
-
-body.belmath a {
-  color: var(--belmath-primary);
-}
-
-body.belmath a:hover {
-  color: var(--belmath-primary-hover);
-}
-
-body.belmath .metric-value {
-  color: var(--belmath-primary);
-}
-
-/* BelOI (Informatics) */
-.department-hero.beloi,
-body.beloi .hero {
-  background: linear-gradient(135deg, var(--beloi-primary) 0%, var(--beloi-primary-hover) 100%);
-}
-
-body.beloi {
-  --department-primary: var(--beloi-primary);
-  --department-primary-hover: var(--beloi-primary-hover);
-  --department-tint-soft: var(--beloi-tint-soft);
-  --department-tint-strong: var(--beloi-tint-strong);
-}
-
-body.beloi .btn-primary {
-  background-color: var(--beloi-primary);
-}
-
-body.beloi .btn-primary:hover {
-  background-color: var(--beloi-primary-hover);
-}
-
-body.beloi a {
-  color: var(--beloi-primary);
-}
-
-body.beloi a:hover {
-  color: var(--beloi-primary-hover);
-}
-
-body.beloi .metric-value {
-  color: var(--beloi-primary);
-}
-
-/* Official Amber for awards/finals/important CTAs */
-.btn-amber,
-.badge-amber {
-  background-color: var(--amber-primary);
-  color: #ffffff;
-}
-
-.btn-amber:hover {
-  background-color: var(--amber-hover);
-  color: #ffffff;
-}
-
-.bg-amber-tint {
-  background-color: var(--amber-tint);
-}
 
