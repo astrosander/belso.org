@@ -1,5 +1,21 @@
 // BelSO Shared JavaScript
 
+// Google Analytics (gtag.js)
+(function() {
+  // Load gtag.js script
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9YX9728SFP';
+  document.head.appendChild(script);
+  
+  // Initialize dataLayer and gtag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-9YX9728SFP');
+})();
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const mobileToggle = document.querySelector('.mobile-menu-toggle');

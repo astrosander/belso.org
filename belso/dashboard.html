@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard BelSO — живая статистика по всем отделениям и активности платформы.">
+  <meta property="og:title" content="Dashboard — BelSO">
+  <title>Dashboard — BelSO</title>
+  <link rel="canonical" href="https://belso.org/belso/dashboard.html">
+  <link rel="stylesheet" href="../shared/css/design-system.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="section" style="padding-top: var(--spacing-2xl);">
+      <div class="container">
+        <div class="section-title">
+          <h1>Dashboard — Живая статистика</h1>
+          <p>Актуальные данные по всем отделениям BelSO</p>
+        </div>
+        
+        <!-- Overall Metrics -->
+        <div class="card" style="margin-bottom: var(--spacing-xl);">
+          <h2>Общая статистика</h2>
+          <div class="metrics-grid" style="margin-top: var(--spacing-lg);">
+            <div class="metric-tile">
+              <div class="metric-value" data-metric="totalPackages">1,250</div>
+              <div class="metric-label">Всего пакетов</div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-value" data-metric="totalProblems">8,500</div>
+              <div class="metric-label">Всего задач</div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-value" data-metric="totalSolutions">3,200</div>
+              <div class="metric-label">Решений</div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-value" data-metric="contestsHosted">28</div>
+              <div class="metric-label">Олимпиад проведено</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Department Breakdown -->
+        <div class="section-title">
+          <h2>Разбивка по отделениям</h2>
+        </div>
+        
+        <div class="card-grid">
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+              <div style="width: 4px; height: 40px; background: var(--belpho-color); border-radius: 2px;"></div>
+              <h3>BelPhO (Физика)</h3>
+            </div>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Пакетов:</td>
+                  <td><strong data-metric="departments.belpho.packages">350</strong></td>
+                </tr>
+                <tr>
+                  <td>Задач:</td>
+                  <td><strong data-metric="departments.belpho.problems">2,400</strong></td>
+                </tr>
+                <tr>
+                  <td>Решений:</td>
+                  <td><strong data-metric="departments.belpho.solutions">900</strong></td>
+                </tr>
+                <tr>
+                  <td>Олимпиад:</td>
+                  <td><strong data-metric="departments.belpho.contests">8</strong></td>
+                </tr>
+              </table>
+            </div>
+            <a href="https://belpho.org" class="btn btn-primary mt-2" style="width: 100%;" target="_blank" rel="noopener noreferrer">Перейти на BelPhO</a>
+          </div>
+          
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+              <div style="width: 4px; height: 40px; background: var(--belastro-color); border-radius: 2px;"></div>
+              <h3>BelAstro (Астрономия)</h3>
+            </div>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Пакетов:</td>
+                  <td><strong data-metric="departments.belastro.packages">280</strong></td>
+                </tr>
+                <tr>
+                  <td>Задач:</td>
+                  <td><strong data-metric="departments.belastro.problems">1,900</strong></td>
+                </tr>
+                <tr>
+                  <td>Решений:</td>
+                  <td><strong data-metric="departments.belastro.solutions">750</strong></td>
+                </tr>
+                <tr>
+                  <td>Олимпиад:</td>
+                  <td><strong data-metric="departments.belastro.contests">7</strong></td>
+                </tr>
+              </table>
+            </div>
+            <a href="https://belastro.org" class="btn btn-primary mt-2" style="width: 100%;" target="_blank" rel="noopener noreferrer">Перейти на BelAstro</a>
+          </div>
+          
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+              <div style="width: 4px; height: 40px; background: var(--belmath-color); border-radius: 2px;"></div>
+              <h3>BelMath (Математика)</h3>
+            </div>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Пакетов:</td>
+                  <td><strong data-metric="departments.belmath.packages">320</strong></td>
+                </tr>
+                <tr>
+                  <td>Задач:</td>
+                  <td><strong data-metric="departments.belmath.problems">2,200</strong></td>
+                </tr>
+                <tr>
+                  <td>Решений:</td>
+                  <td><strong data-metric="departments.belmath.solutions">850</strong></td>
+                </tr>
+                <tr>
+                  <td>Олимпиад:</td>
+                  <td><strong data-metric="departments.belmath.contests">7</strong></td>
+                </tr>
+              </table>
+            </div>
+            <a href="https://belmath.org" class="btn btn-primary mt-2" style="width: 100%;" target="_blank" rel="noopener noreferrer">Перейти на BelMath</a>
+          </div>
+          
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+              <div style="width: 4px; height: 40px; background: var(--beloi-color); border-radius: 2px;"></div>
+              <h3>BelOI (Информатика)</h3>
+            </div>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td>Пакетов:</td>
+                  <td><strong data-metric="departments.beloi.packages">300</strong></td>
+                </tr>
+                <tr>
+                  <td>Задач:</td>
+                  <td><strong data-metric="departments.beloi.problems">2,000</strong></td>
+                </tr>
+                <tr>
+                  <td>Решений:</td>
+                  <td><strong data-metric="departments.beloi.solutions">700</strong></td>
+                </tr>
+                <tr>
+                  <td>Олимпиад:</td>
+                  <td><strong data-metric="departments.beloi.contests">6</strong></td>
+                </tr>
+              </table>
+            </div>
+            <a href="https://beloi.org" class="btn btn-primary mt-2" style="width: 100%;" target="_blank" rel="noopener noreferrer">Перейти на BelOI</a>
+          </div>
+        </div>
+        
+        <!-- Last Updated -->
+        <div class="text-center" style="margin-top: var(--spacing-2xl); padding: var(--spacing-lg); background: var(--belso-gray-50); border-radius: var(--border-radius);">
+          <p class="text-muted">Последнее обновление: <span data-last-updated>15 января 2024</span></p>
+          <p style="font-size: 0.875rem; margin-top: var(--spacing-sm);">Данные обновляются регулярно. Для получения актуальной информации посетите страницы отдельных отделений.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="../shared/js/components.js"></script>
+  <script src="../shared/js/main.js"></script>
+</body>
+</html>
+
