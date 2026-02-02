@@ -1,29 +1,76 @@
 /* BelSO Design System - Shared Styles */
 
 :root {
-  /* Colors */
-  --belso-primary: #1a4d8c;
-  --belso-primary-dark: #0d3a6b;
-  --belso-primary-light: #2d6ba8;
-  --belso-secondary: #e63946;
-  --belso-accent: #f77f00;
-  --belso-success: #06a77d;
-  --belso-gray-50: #f8f9fa;
-  --belso-gray-100: #e9ecef;
-  --belso-gray-200: #dee2e6;
-  --belso-gray-300: #ced4da;
-  --belso-gray-400: #adb5bd;
-  --belso-gray-500: #6c757d;
-  --belso-gray-600: #495057;
-  --belso-gray-700: #343a40;
-  --belso-gray-800: #212529;
-  --belso-gray-900: #0d1117;
+  /* Global Neutrals (same on every site) */
+  --bg-primary: #FFFFFF;
+  --bg-soft: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-muted: #475569;
   
-  /* Department Colors */
-  --belpho-color: #8b5cf6;
-  --belastro-color: #3b82f6;
-  --belmath-color: #10b981;
-  --beloi-color: #f59e0b;
+  /* Official Accent (global, optimistic & "medal-like") */
+  --amber-primary: #B45309;
+  --amber-hover: #92400E;
+  --amber-tint: #FEF3C7;
+  
+  /* BelSO (Umbrella) - Brand Cyan */
+  --belso-primary: #0E7490;
+  --belso-primary-hover: #155E75;
+  --belso-tint-soft: #ECFEFF;
+  --belso-tint-strong: #CFFAFE;
+  --belso-support: #0369A1;
+  --belso-support-tint: #E0F2FE;
+  
+  /* BelPhO (Physics) - Brand Blue */
+  --belpho-primary: #2563EB;
+  --belpho-primary-hover: #1D4ED8;
+  --belpho-tint-soft: #EFF6FF;
+  --belpho-tint-strong: #DBEAFE;
+  --belpho-support: #0E7490;
+  --belpho-support-tint: #ECFEFF;
+  
+  /* BelAstro (Astronomy) - Brand Violet */
+  --belastro-primary: #6D28D9;
+  --belastro-primary-hover: #5B21B6;
+  --belastro-tint-soft: #F5F3FF;
+  --belastro-tint-strong: #EDE9FE;
+  --belastro-support: #4338CA;
+  --belastro-support-tint: #E0E7FF;
+  
+  /* BelMath (Math) - Brand Emerald */
+  --belmath-primary: #047857;
+  --belmath-primary-hover: #065F46;
+  --belmath-tint-soft: #ECFDF5;
+  --belmath-tint-strong: #D1FAE5;
+  --belmath-support: #4D7C0F;
+  --belmath-support-tint: #ECFCCB;
+  
+  /* BelOI (Informatics) - Brand Magenta */
+  --beloi-primary: #C026D3;
+  --beloi-primary-hover: #A21CAF;
+  --beloi-tint-soft: #FDF4FF;
+  --beloi-tint-strong: #FAE8FF;
+  --beloi-support: #BE123C;
+  --beloi-support-tint: #FFE4E6;
+  
+  /* Legacy gray variables for compatibility */
+  --belso-gray-50: #F8FAFC;
+  --belso-gray-100: #F8FAFC;
+  --belso-gray-200: #E2E8F0;
+  --belso-gray-300: #E2E8F0;
+  --belso-gray-400: #94A3B8;
+  --belso-gray-500: #64748B;
+  --belso-gray-600: #475569;
+  --belso-gray-700: #334155;
+  --belso-gray-800: #1E293B;
+  --belso-gray-900: #0F172A;
+  
+  /* Department Colors (for quick reference) */
+  --belpho-color: #2563EB;
+  --belastro-color: #6D28D9;
+  --belmath-color: #047857;
+  --beloi-color: #C026D3;
   
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -66,8 +113,8 @@ html {
 body {
   font-family: var(--font-sans);
   line-height: 1.6;
-  color: var(--belso-gray-800);
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -76,7 +123,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: var(--belso-gray-900);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-md);
 }
 
@@ -99,7 +146,7 @@ h4 {
 
 p {
   margin-bottom: var(--spacing-md);
-  color: var(--belso-gray-700);
+  color: var(--text-primary);
 }
 
 a {
@@ -109,7 +156,7 @@ a {
 }
 
 a:hover {
-  color: var(--belso-primary-dark);
+  color: var(--belso-primary-hover);
 }
 
 /* Container */
@@ -121,8 +168,8 @@ a:hover {
 
 /* Header */
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--belso-gray-200);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -144,7 +191,7 @@ a:hover {
   gap: var(--spacing-sm);
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--belso-gray-900);
+  color: var(--text-primary);
 }
 
 .logo img {
@@ -154,7 +201,7 @@ a:hover {
 
 .logo-department {
   font-size: 0.875rem;
-  color: var(--belso-gray-500);
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -170,7 +217,7 @@ a:hover {
 }
 
 .nav-link {
-  color: var(--belso-gray-700);
+  color: var(--text-primary);
   font-weight: 500;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
@@ -179,12 +226,12 @@ a:hover {
 
 .nav-link:hover {
   color: var(--belso-primary);
-  background-color: var(--belso-gray-50);
+  background-color: var(--bg-soft);
 }
 
 .nav-link.active {
   color: var(--belso-primary);
-  background-color: var(--belso-gray-50);
+  background-color: var(--bg-soft);
 }
 
 .dropdown {
@@ -195,8 +242,8 @@ a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #ffffff;
-  border: 1px solid var(--belso-gray-200);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
   min-width: 200px;
@@ -218,13 +265,13 @@ a:hover {
 .dropdown-item {
   display: block;
   padding: var(--spacing-sm) var(--spacing-md);
-  color: var(--belso-gray-700);
+  color: var(--text-primary);
   border-radius: var(--border-radius);
   transition: background-color var(--transition-fast);
 }
 
 .dropdown-item:hover {
-  background-color: var(--belso-gray-50);
+  background-color: var(--bg-soft);
   color: var(--belso-primary);
 }
 
@@ -248,24 +295,24 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--belso-primary-dark);
+  background-color: var(--belso-primary-hover);
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-  background-color: var(--belso-gray-100);
-  color: var(--belso-gray-800);
+  background-color: var(--bg-soft);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  background-color: var(--belso-gray-200);
+  background-color: var(--border);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--belso-primary) 0%, var(--belso-primary-dark) 100%);
+  background: linear-gradient(135deg, var(--belso-primary) 0%, var(--belso-primary-hover) 100%);
   color: #ffffff;
   padding: var(--spacing-3xl) 0;
   text-align: center;
@@ -293,8 +340,8 @@ a:hover {
 }
 
 .metric-tile {
-  background: #ffffff;
-  border: 1px solid var(--belso-gray-200);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
@@ -304,7 +351,7 @@ a:hover {
 .metric-tile:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--belso-primary-light);
+  border-color: var(--belso-primary);
 }
 
 .metric-value {
@@ -315,15 +362,15 @@ a:hover {
 }
 
 .metric-label {
-  color: var(--belso-gray-600);
+  color: var(--text-muted);
   font-size: 0.9375rem;
   font-weight: 500;
 }
 
 /* Cards */
 .card {
-  background: #ffffff;
-  border: 1px solid var(--belso-gray-200);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   transition: all var(--transition-base);
@@ -331,7 +378,7 @@ a:hover {
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  border-color: var(--belso-primary-light);
+  border-color: var(--belso-primary);
 }
 
 .card-grid {
@@ -343,8 +390,8 @@ a:hover {
 
 /* Department Cards */
 .department-card {
-  background: #ffffff;
-  border: 2px solid var(--belso-gray-200);
+  background: var(--surface);
+  border: 2px solid var(--border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
@@ -413,15 +460,15 @@ a:hover {
 
 .section-title p {
   font-size: 1.125rem;
-  color: var(--belso-gray-600);
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
 }
 
 /* Footer */
 .footer {
-  background: var(--belso-gray-900);
-  color: var(--belso-gray-300);
+  background: var(--text-primary);
+  color: var(--text-muted);
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
   margin-top: var(--spacing-3xl);
 }
@@ -448,7 +495,7 @@ a:hover {
 }
 
 .footer-links a {
-  color: var(--belso-gray-400);
+  color: var(--text-muted);
   transition: color var(--transition-fast);
 }
 
@@ -457,16 +504,16 @@ a:hover {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--belso-gray-800);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: var(--spacing-xl);
   text-align: center;
   font-size: 0.875rem;
-  color: var(--belso-gray-500);
+  color: var(--text-muted);
 }
 
 .footer-disclaimer {
   background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--belso-accent);
+  border-left: 3px solid var(--amber-primary);
   padding: var(--spacing-md);
   margin-top: var(--spacing-lg);
   border-radius: var(--border-radius);
@@ -475,12 +522,12 @@ a:hover {
 
 /* BelSO Network Bar */
 .network-bar {
-  background: var(--belso-gray-50);
-  border-bottom: 1px solid var(--belso-gray-200);
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
   padding: var(--spacing-sm) 0;
   font-size: 0.875rem;
   text-align: center;
-  color: var(--belso-gray-600);
+  color: var(--text-muted);
 }
 
 .network-bar a {
@@ -497,28 +544,28 @@ a:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #ffffff;
+  background: var(--surface);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
 
 thead {
-  background: var(--belso-gray-50);
+  background: var(--bg-soft);
 }
 
 th, td {
   padding: var(--spacing-md);
   text-align: left;
-  border-bottom: 1px solid var(--belso-gray-200);
+  border-bottom: 1px solid var(--border);
 }
 
 th {
   font-weight: 600;
-  color: var(--belso-gray-900);
+  color: var(--text-primary);
 }
 
 tr:hover {
-  background: var(--belso-gray-50);
+  background: var(--bg-soft);
 }
 
 /* Forms */
@@ -530,7 +577,7 @@ tr:hover {
   display: block;
   margin-bottom: var(--spacing-sm);
   font-weight: 500;
-  color: var(--belso-gray-900);
+  color: var(--text-primary);
 }
 
 .form-input,
@@ -538,11 +585,13 @@ tr:hover {
 .form-select {
   width: 100%;
   padding: var(--spacing-sm) var(--spacing-md);
-  border: 1px solid var(--belso-gray-300);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius);
   font-family: var(--font-sans);
   font-size: 1rem;
   transition: all var(--transition-fast);
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .form-input:focus,
@@ -550,7 +599,7 @@ tr:hover {
 .form-select:focus {
   outline: none;
   border-color: var(--belso-primary);
-  box-shadow: 0 0 0 3px rgba(26, 77, 140, 0.1);
+  box-shadow: 0 0 0 3px var(--belso-tint-soft);
 }
 
 .form-textarea {
@@ -565,8 +614,8 @@ tr:hover {
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 999px;
-  background: var(--belso-gray-100);
-  color: var(--belso-gray-700);
+  background: var(--bg-soft);
+  color: var(--text-primary);
 }
 
 .badge-primary {
@@ -575,7 +624,7 @@ tr:hover {
 }
 
 .badge-success {
-  background: var(--belso-success);
+  background: var(--belmath-primary);
   color: #ffffff;
 }
 
@@ -585,7 +634,7 @@ tr:hover {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--belso-gray-700);
+  color: var(--text-primary);
   cursor: pointer;
 }
 
@@ -617,8 +666,8 @@ tr:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: #ffffff;
-    border-top: 1px solid var(--belso-gray-200);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
     flex-direction: column;
     padding: var(--spacing-md);
     box-shadow: var(--shadow-lg);
@@ -661,7 +710,7 @@ tr:hover {
 }
 
 .text-muted {
-  color: var(--belso-gray-600);
+  color: var(--text-muted);
 }
 
 .mt-1 { margin-top: var(--spacing-md); }
@@ -670,4 +719,153 @@ tr:hover {
 .mb-1 { margin-bottom: var(--spacing-md); }
 .mb-2 { margin-bottom: var(--spacing-lg); }
 .mb-3 { margin-bottom: var(--spacing-xl); }
+
+/* Department-specific styling */
+/* BelPhO (Physics) */
+.department-hero.belpho,
+body.belpho .hero {
+  background: linear-gradient(135deg, var(--belpho-primary) 0%, var(--belpho-primary-hover) 100%);
+}
+
+body.belpho {
+  --department-primary: var(--belpho-primary);
+  --department-primary-hover: var(--belpho-primary-hover);
+  --department-tint-soft: var(--belpho-tint-soft);
+  --department-tint-strong: var(--belpho-tint-strong);
+}
+
+body.belpho .btn-primary {
+  background-color: var(--belpho-primary);
+}
+
+body.belpho .btn-primary:hover {
+  background-color: var(--belpho-primary-hover);
+}
+
+body.belpho a {
+  color: var(--belpho-primary);
+}
+
+body.belpho a:hover {
+  color: var(--belpho-primary-hover);
+}
+
+body.belpho .metric-value {
+  color: var(--belpho-primary);
+}
+
+/* BelAstro (Astronomy) */
+.department-hero.belastro,
+body.belastro .hero {
+  background: linear-gradient(135deg, var(--belastro-primary) 0%, var(--belastro-primary-hover) 100%);
+}
+
+body.belastro {
+  --department-primary: var(--belastro-primary);
+  --department-primary-hover: var(--belastro-primary-hover);
+  --department-tint-soft: var(--belastro-tint-soft);
+  --department-tint-strong: var(--belastro-tint-strong);
+}
+
+body.belastro .btn-primary {
+  background-color: var(--belastro-primary);
+}
+
+body.belastro .btn-primary:hover {
+  background-color: var(--belastro-primary-hover);
+}
+
+body.belastro a {
+  color: var(--belastro-primary);
+}
+
+body.belastro a:hover {
+  color: var(--belastro-primary-hover);
+}
+
+body.belastro .metric-value {
+  color: var(--belastro-primary);
+}
+
+/* BelMath (Math) */
+.department-hero.belmath,
+body.belmath .hero {
+  background: linear-gradient(135deg, var(--belmath-primary) 0%, var(--belmath-primary-hover) 100%);
+}
+
+body.belmath {
+  --department-primary: var(--belmath-primary);
+  --department-primary-hover: var(--belmath-primary-hover);
+  --department-tint-soft: var(--belmath-tint-soft);
+  --department-tint-strong: var(--belmath-tint-strong);
+}
+
+body.belmath .btn-primary {
+  background-color: var(--belmath-primary);
+}
+
+body.belmath .btn-primary:hover {
+  background-color: var(--belmath-primary-hover);
+}
+
+body.belmath a {
+  color: var(--belmath-primary);
+}
+
+body.belmath a:hover {
+  color: var(--belmath-primary-hover);
+}
+
+body.belmath .metric-value {
+  color: var(--belmath-primary);
+}
+
+/* BelOI (Informatics) */
+.department-hero.beloi,
+body.beloi .hero {
+  background: linear-gradient(135deg, var(--beloi-primary) 0%, var(--beloi-primary-hover) 100%);
+}
+
+body.beloi {
+  --department-primary: var(--beloi-primary);
+  --department-primary-hover: var(--beloi-primary-hover);
+  --department-tint-soft: var(--beloi-tint-soft);
+  --department-tint-strong: var(--beloi-tint-strong);
+}
+
+body.beloi .btn-primary {
+  background-color: var(--beloi-primary);
+}
+
+body.beloi .btn-primary:hover {
+  background-color: var(--beloi-primary-hover);
+}
+
+body.beloi a {
+  color: var(--beloi-primary);
+}
+
+body.beloi a:hover {
+  color: var(--beloi-primary-hover);
+}
+
+body.beloi .metric-value {
+  color: var(--beloi-primary);
+}
+
+/* Official Amber for awards/finals/important CTAs */
+.btn-amber,
+.badge-amber {
+  background-color: var(--amber-primary);
+  color: #ffffff;
+}
+
+.btn-amber:hover {
+  background-color: var(--amber-hover);
+  color: #ffffff;
+}
+
+.bg-amber-tint {
+  background-color: var(--amber-tint);
+}
 
