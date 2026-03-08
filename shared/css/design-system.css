@@ -186,6 +186,12 @@ a:hover {
   margin: 0 auto;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -272,6 +278,48 @@ a:hover {
 .dropdown-item:hover {
   background-color: var(--bg-soft);
   color: var(--belso-primary);
+}
+
+.language-switcher {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+  background-color: var(--card-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 44px;
+  height: 36px;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  background-color: var(--bg-soft);
+  border-color: var(--belso-primary);
+  color: var(--belso-primary);
+}
+
+.lang-btn.active {
+  background-color: var(--belso-primary);
+  color: #ffffff;
+  border-color: var(--belso-primary);
+}
+
+.lang-btn.active:hover {
+  background-color: var(--belso-primary-hover);
+  border-color: var(--belso-primary-hover);
 }
 
 .btn {
@@ -947,6 +995,14 @@ tr:hover {
   
   .mobile-menu-toggle {
     display: block;
+  }
+  
+  .language-switcher {
+    display: flex;
+  }
+  
+  .header-right {
+    gap: var(--spacing-md);
   }
   
   .metrics-grid {

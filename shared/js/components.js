@@ -57,7 +57,7 @@ async function loadComponent(elementId, filePath) {
       if (departmentName) {
         const deptSpan = document.querySelector('[data-department-name]');
         if (deptSpan) {
-          deptSpan.textContent = `— ${departmentName}`;
+          deptSpan.textContent = ` ${departmentName}`;
         }
         
         // Update CTA button text
@@ -69,6 +69,16 @@ async function loadComponent(elementId, filePath) {
       
       // Set active nav link
       setActiveNavLink();
+      
+      // Initialize language switcher if header was loaded
+      if (elementId === 'header-placeholder') {
+        // Wait a bit for DOM to be ready, then initialize language switcher
+        setTimeout(() => {
+          if (typeof window.initLanguageSwitcher === 'function') {
+            window.initLanguageSwitcher();
+          }
+        }, 100);
+      }
     }
   } catch (error) {
     console.error(`Error loading component ${elementId}:`, error);
@@ -96,7 +106,19 @@ function setActiveNavLink() {
 
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  loadComponent('header-placeholder', '/shared/components/header.html');
+  // Only load header if placeholder exists (header might be embedded directly)
+  const headerPlaceholder = document.getElementById('header-placeholder');
+  if (headerPlaceholder) {
+    loadComponent('header-placeholder', '/shared/components/header.html');
+  } else {
+    // Header is embedded, initialize language switcher directly
+    setTimeout(() => {
+      if (typeof window.initLanguageSwitcher === 'function') {
+        window.initLanguageSwitcher();
+      }
+    }, 100);
+  }
+  
   loadComponent('footer-placeholder', '/shared/components/footer.html');
   
   // Load analytics if placeholder exists
