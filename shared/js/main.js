@@ -25,12 +25,12 @@ const translations = {
       learnMore: 'Узнать больше'
     },
     metrics: {
-      archivedPackages: 'Архивных пакетов',
-      indexedProblems: 'Задач проиндексировано',
+      archivedPackages: 'Файлов в архивах',
+      indexedProblems: 'Задач с разметкой',
       publishedSolutions: 'Решений опубликовано',
       activeContributors: 'Активных участников',
       contestsHosted: 'Олимпиад проведено',
-      totalUsers: 'Пользователей'
+      totalUsers: 'Пользователей с января 2026'
     },
     departments: {
       title: 'Отделения',
@@ -101,12 +101,12 @@ const translations = {
       learnMore: 'Learn more'
     },
     metrics: {
-      archivedPackages: 'Archived packages',
-      indexedProblems: 'Problems indexed',
+      archivedPackages: 'Files in the archives',
+      indexedProblems: 'Problems digitized',
       publishedSolutions: 'Solutions published',
       activeContributors: 'Active contributors',
       contestsHosted: 'Contests hosted',
-      totalUsers: 'Users'
+      totalUsers: 'Users since January 2026'
     },
     departments: {
       title: 'Departments',
