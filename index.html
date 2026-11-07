@@ -63,10 +63,11 @@
       font-weight: 600; color: var(--muted); cursor: pointer;
     }
     .lang button[aria-pressed="true"] { background: var(--text); color: #fff; }
-    main { flex: 1; max-width: 1080px; width: 100%; margin: 0 auto; padding: 56px 24px 40px; }
+    main { flex: 1; max-width: 1080px; width: 100%; margin: 0 auto; padding: 32px 24px 24px; }
     h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; margin: 0 0 48px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; margin: 0 0 32px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px; }
+    .grid .pho { grid-row: span 2; }
     .site {
       display: flex; flex-direction: column; text-decoration: none; color: inherit;
       background: var(--card); border: 1px solid var(--border); border-radius: 16px;
@@ -74,6 +75,15 @@
     }
     .site:hover, .site:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(15, 23, 42, .10); border-color: var(--c); outline: none; }
     .site img { height: 120px; width: auto; max-width: 100%; object-fit: contain; align-self: center; margin-bottom: 20px; }
+    .site.pho { padding: 28px 28px 28px; }
+    .site.pho img { height: 250px; margin-bottom: 24px; }
+    .site.pho h2 { font-size: 2rem; }
+    .site.pho p.desc { font-size: 1.05rem; }
+    .site.side { flex-direction: row; align-items: center; gap: 22px; padding: 20px 22px; }
+    .site.side img { width: 130px; height: auto; max-height: 125px; margin: 0; flex: none; }
+    .site.side .body { display: flex; flex-direction: column; flex: 1; align-self: stretch; }
+    .site.side h2 { margin: 2px 0 6px; font-size: 1.35rem; }
+    .site.side p.desc { margin: 0 0 16px; font-size: 0.95rem; }
     .subject { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c); margin: 0; }
     .site h2 { margin: 4px 0 10px; font-size: 1.5rem; }
     .site p.desc { margin: 0 0 24px; color: var(--muted); flex: 1; }
@@ -87,8 +97,14 @@
     footer { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 24px; }
     @media (max-width: 860px) {
       .grid { grid-template-columns: 1fr; }
+      .grid .pho { grid-row: auto; }
+      .site.pho img { height: 180px; }
       main { padding-top: 36px; }
       .lead { margin-bottom: 32px; }
+    }
+    @media (max-width: 480px) {
+      .site.side { flex-direction: column; align-items: stretch; }
+      .site.side img { align-self: center; }
     }
   </style>
 </head>
@@ -107,25 +123,29 @@
 
     <div class="grid">
       <a class="site pho" href="https://belpho.org/">
-        <img src="img/belpho.svg" alt="BelPhO logo" width="173" height="132">
+        <img src="img/belpho.svg" alt="BelPhO logo" width="155" height="122">
         <p class="subject" data-t="physics">Physics</p>
         <h2>BelPhO</h2>
         <p class="desc" data-t="phoDesc">The Belarusian Physics Olympiad. An archive of olympiad problems and solutions since 1990, books and a training program.</p>
         <span class="go" data-t="phoGo">Open belpho.org</span>
       </a>
-      <a class="site math" href="https://belmath.org/">
+      <a class="site side math" href="https://belmath.org/">
         <img src="img/belmath.svg" alt="BelMath logo" width="154" height="144">
-        <p class="subject" data-t="math">Mathematics</p>
-        <h2>BelMath</h2>
-        <p class="desc" data-t="mathDesc">The Belarusian Mathematical Olympiad. Problems of the national olympiad since 1995 and materials for preparation.</p>
-        <span class="go" data-t="mathGo">Open belmath.org</span>
+        <div class="body">
+          <p class="subject" data-t="math">Mathematics</p>
+          <h2>BelMath</h2>
+          <p class="desc" data-t="mathDesc">The Belarusian Mathematical Olympiad. Problems of the national olympiad since 1995 and materials for preparation.</p>
+          <span class="go" data-t="mathGo">Open belmath.org</span>
+        </div>
       </a>
-      <a class="site astro" href="https://belastro.org/">
+      <a class="site side astro" href="https://belastro.org/">
         <img src="img/belastro.svg" alt="BelAstro logo" width="130" height="87">
-        <p class="subject" data-t="astro">Astronomy</p>
-        <h2>BelAstro</h2>
-        <p class="desc" data-t="astroDesc">The Belarusian Astronomy Olympiad. Problems and solutions from every stage, materials of international olympiads and books.</p>
-        <span class="go" data-t="astroGo">Open belastro.org</span>
+        <div class="body">
+          <p class="subject" data-t="astro">Astronomy</p>
+          <h2>BelAstro</h2>
+          <p class="desc" data-t="astroDesc">The Belarusian Astronomy Olympiad. Problems and solutions from every stage, materials of international olympiads and books.</p>
+          <span class="go" data-t="astroGo">Open belastro.org</span>
+        </div>
       </a>
     </div>
   </main>
